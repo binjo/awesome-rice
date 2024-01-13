@@ -16,7 +16,7 @@ local capsule = require("widget.capsule")
 local pango = require("utils.pango")
 
 
-local mod_key = mod.alt
+local mod_key = mod.super
 
 return mebox {
     item_width = dpi(1000),
@@ -152,10 +152,10 @@ return mebox {
     end,
     keygrabber_auto = false,
     keygrabber_builder = function(self)
-        local tab_key = binding.awful({ mod_key }, "Tab", function()
+        local tab_key = binding.awful({ mod_key }, "j", function()
             self:select_next(1)
         end)
-        local shift_tab_key = binding.awful({ mod_key, mod.shift }, "Tab", function()
+        local shift_tab_key = binding.awful({ mod_key, mod.shift }, "j", function()
             self:select_next(-1)
         end)
         return awful.keygrabber {

@@ -36,7 +36,7 @@ bindbox.main:add_groups {
     },
     {
         name = "Client",
-        { modifiers = { mod.alt }, "Tab", description = "Client switcher" },
+        { modifiers = { mod.super }, "j", description = "Client switcher" },
         groups = {
             {
                 name = "State",

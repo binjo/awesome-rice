@@ -25,15 +25,15 @@ config.wm = {
     name = "awesome",
 }
 
-local terminal = "alacritty"
-local terminal_execute = terminal .. " -e "
+local terminal = "wezterm"
+local terminal_execute = terminal -- .. " -e "
 
 config.apps = {
-    shell = "bash",
+    shell = "fish",
     terminal = terminal,
     editor = terminal_execute .. "micro",
-    browser = "firefox",
-    private_browser = "firefox --private-window",
+    browser = "google-chrome",
+    private_browser = "google-chrome --incognito",
     file_manager = terminal_execute .. "lf",
     calculator = "speedcrunch",
     mixer = terminal_execute .. "pulsemixer",

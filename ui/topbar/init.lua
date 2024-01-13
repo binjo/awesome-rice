@@ -12,13 +12,13 @@ local clientlist_widget = require("ui.topbar.clientlist")
 local taglist_widget = require("ui.topbar.taglist")
 local systray_widget = require("ui.topbar.systray")
 local torrent_widget = require("ui.topbar.torrent")
-local network_widget = require("ui.topbar.network")
-local volume_widget = require("ui.topbar.volume")
+-- local network_widget = require("ui.topbar.network")
+-- local volume_widget = require("ui.topbar.volume")
 local weather_widget = require("ui.topbar.weather")
 local datetime_widget = require("ui.topbar.datetime")
-local tools_widget = require("ui.topbar.tools")
+-- local tools_widget = require("ui.topbar.tools")
 local power_widget = require("ui.topbar.power")
-local media_player_widget = require("ui.topbar.media_player")
+-- local media_player_widget = require("ui.topbar.media_player")
 
 
 capi.screen.connect_signal("request::desktop_decoration", function(screen)
@@ -67,9 +67,9 @@ capi.screen.connect_signal("request::desktop_decoration", function(screen)
     local left = wibar:get_children_by_id("#left")[1]
     left:add(layoutbox_widget.new(wibar))
     left:add(screen.topbar.clientlist)
-    if is_primary then
-        left:add(media_player_widget.new(wibar))
-    end
+    -- if is_primary then
+        -- left:add(media_player_widget.new(wibar))
+    -- end
 
     local middle = wibar:get_children_by_id("#middle")[1]
     middle:add(screen.topbar.taglist)
@@ -79,17 +79,17 @@ capi.screen.connect_signal("request::desktop_decoration", function(screen)
         if config.features.torrent_widget then
             right:add(torrent_widget.new(wibar))
         end
-        right:add(network_widget.new(wibar))
-        right:add(volume_widget.new(wibar))
+        -- right:add(network_widget.new(wibar))
+        -- right:add(volume_widget.new(wibar))
         if config.features.weather_widget then
             right:add(weather_widget.new(wibar))
         end
-        right:add(tools_widget.new(wibar))
+        -- right:add(tools_widget.new(wibar))
         right:add(systray_widget.new(wibar))
         right:add(datetime_widget.new(wibar))
         right:add(power_widget.new(wibar))
     else
-        right:add(volume_widget.new(wibar))
+        -- right:add(volume_widget.new(wibar))
         right:add(datetime_widget.new(wibar))
         right:add(power_widget.new(wibar))
     end

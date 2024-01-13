@@ -87,7 +87,7 @@ local global_bindings = {
 
     binding.new {
         modifiers = { mod.super },
-        triggers = "a",
+        triggers = "space",
         path = "Launcher",
         description = "Launcher",
         on_press = function() awful.spawn(config.actions.show_launcher) end,
